@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic form</title>
+        <style>
+            .error { color: crimson; }
+            body { background-color: aqua; }
+        </style>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <form action="basic_form.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Name" required>
+                <span class="error">* <?php echo $nameErr;?></span>
+            </div>
+            <br>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter Email" required>
+                <span class="error">* <?php echo $emailErr;?></span>
+            </div>
+            <br>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" placeholder="Enter Age" required>
+                <span class="error">* <?php echo $ageErr;?></span>
+            </div>
+            <br>
+            <div>
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" value="male" id="male">male
+                <input type="radio" name="gender" value="female" id="female">female
+                <input type="radio" name="gender" value="other" id="other">other
+                <span class="error">* <?php echo $genderErr;?></span>
+            </div>
+            <br>
+            <div>
+                <label for="profile_picture">Profile Picture:</label>
+                <input type="file" id="profile_picture" name="profile_picture" required>
+                <span class="error">* <?php echo $profilePictureErr;?></span>
+            </div>
+            <br>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
